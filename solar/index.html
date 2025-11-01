@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarBright - Clean Solar Energy Solutions</title>
+    <meta name="description" content="Power your home with solar energy and save up to 70% on electricity bills. Professional solar panel installation, maintenance, and consultation services.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #0066cc;
+            --color-secondary: #22c55e;
+            --color-accent: #fbbf24;
+            --color-dark: #1a1a1a;
+            --color-light: #f8f9fa;
+            --color-muted: #1f2023;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--color-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #0066cc, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-dark);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: var(--color-dark);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--color-dark);
+            color: var(--color-dark);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-dark);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.05), rgba(251, 191, 36, 0.05));
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url("solar-hero.jpg") center/cover no-repeat;
+                opacity: 0.6; /* 60% opacity */
+                z-index: -99;
+            }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding-top: 3rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .stat-item {
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--color-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-muted);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 0;
+            background: var(--color-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--color-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #0066cc, #0099ff);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--color-muted);
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .service-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-secondary);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .service-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-content p {
+            color: var(--color-muted);
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--color-secondary);
+            font-weight: bold;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stats Banner */
+        .stats-banner {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #0066cc, #0099ff);
+            color: white;
+        }
+
+        .stats-banner .section-header h2,
+        .stats-banner .section-header p {
+            color: white;
+        }
+
+        .stats-banner .grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .stats-banner .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            color: white;
+        }
+
+        .stats-banner .card-icon {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 0 auto 1rem;
+        }
+
+        .stats-banner .stat-value {
+            color: white;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 0;
+            background: var(--color-light);
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            color: var(--color-accent);
+        }
+
+        .testimonial-text {
+            color: var(--color-muted);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+        }
+
+        .testimonial-role {
+            font-size: 0.875rem;
+            color: var(--color-muted);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--color-dark);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-white:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: white;
+            padding: 3rem 0 1.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: var(--color-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+            color: var(--color-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-banner .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons,
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+        /* About Us Section */
+.about {
+    padding: 6rem 0;
+    background: white;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.about-content p {
+    color: var(--color-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQs Section */
+.faqs {
+    padding: 6rem 0;
+    background: var(--color-light);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.faq-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.faq-item p {
+    color: var(--color-muted);
+    line-height: 1.6;
+}
+
+/* Responsive for About Section */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .about-image img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    ☀️ BZG Solar
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#cta" class="btn btn-primary">Get Free Quote</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">
+                    ☀️ Clean Energy for a Brighter Future
+                </div>
+                
+                <h1>
+                    Power Your Home with<br>
+                    <span class="gradient-text">Solar Energy</span>
+                </h1>
+                
+                <p>
+                    Save up to 70% on electricity bills while protecting the planet. 
+                    Join thousands of homeowners making the switch to clean, renewable energy.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#cta" class="btn btn-primary">Get Free Quote →</a>
+                    <a href="#services" class="btn btn-outline">How It Works</a>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Years Warranty</div>
+                    </div>
+                    <!-- <div class="stat-item">
+                        <div class="stat-value">5000+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div> -->
+                    <div class="stat-item">
+                        <div class="stat-value">70%</div>
+                        <div class="stat-label">Average Savings</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose <span class="gradient-text">Solar Energy?</span></h2>
+                <p>Discover the advantages of switching to clean, renewable solar power</p>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Massive Savings</h3>
+                    <p>Cut your electricity bills by up to 70% and protect yourself from rising energy costs.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🌿</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Reduce your carbon footprint and contribute to a cleaner, healthier planet.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Energy Independence</h3>
+                    <p>Generate your own power and reduce reliance on the grid.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">📉</div>
+                    <h3>Low Maintenance</h3>
+                    <p>Solar panels require minimal upkeep and come with long-term warranties.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Increase Home Value</h3>
+                    <p>Homes with solar systems sell for more and attract eco-conscious buyers.</p>
+                </div>
+                
+                <!-- <div class="card">
+                    <div class="card-icon">🏠</div>
+                    <h3>Government Incentives</h3>
+                    <p>Take advantage of tax credits and rebates to reduce installation costs.</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span class="gradient-text">Services</span></h2>
+                <p>Comprehensive solar solutions tailored to your needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div>
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <div class="service-content">
+                            <h3>Residential Solar</h3>
+                            <p>Custom solar solutions designed for your home's unique energy needs.</p>
+                            <ul class="feature-list">
+                                <li>Free consultation</li>
+                                <!-- <li>Custom design</li> -->
+                                <li>Professional installation</li>
+                                <li>5-year warranty</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="service-card">
+                        <div class="service-icon">🏢</div>
+                        <div class="service-content">
+                            <h3>Commercial Solar</h3>
+                            <p>Scalable solar systems for businesses looking to reduce operating costs.</p>
+                            <ul class="feature-list">
+                                <li>ROI analysis</li>
+                                <li>Large-scale systems</li>
+                                <li>Tax incentives</li>
+                                <li>Ongoing support</li>
+                            </ul>
+                        </div>
+                    </div> -->
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <div class="service-content">
+                            <h3>Maintenance & Repair</h3>
+                            <p>Keep your solar system running at peak performance year-round.</p>
+                            <ul class="feature-list">
+                                <li>Regular inspections</li>
+                                <li>Performance monitoring</li>
+                                <li>Quick repairs</li>
+                                <li>Warranty support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="Effective-Home-solar.jpg" alt="Solar Installation" class="service-image">
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#cta" class="btn btn-primary">Schedule Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <!-- <section class="stats-banner">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Impact in Numbers</h2>
+                <p>Making a real difference for our customers and the planet</p>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <div class="stat-value">500MW</div>
+                    <div class="stat-label">Total Energy Generated</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <div class="stat-value">5,000+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <div class="stat-value">$50M+</div>
+                    <div class="stat-label">Energy Cost Savings</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🌲</div>
+                    <div class="stat-value">75K tons</div>
+                    <div class="stat-label">CO₂ Emissions Prevented</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Testimonials -->
+    <!-- <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our <span class="gradient-text">Customers Say</span></h2>
+                <p>Real stories from homeowners and businesses who made the switch</p>
+            </div>
+            
+            <div class="grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <p class="testimonial-text">"Switching to solar was the best decision for our family. Our electricity bills dropped by 65%, and the installation process was seamless."</p>
+                    <div class="testimonial-author">Michael Chen</div>
+                    <div class="testimonial-role">Homeowner</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <p class="testimonial-text">"The commercial solar system has significantly reduced our operating costs. The team was professional and the ROI exceeded our expectations."</p>
+                    <div class="testimonial-author">Sarah Williams</div>
+                    <div class="testimonial-role">Business Owner</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <p class="testimonial-text">"Excellent service from start to finish. The team handled everything, including permits and installation. Highly recommend!"</p>
+                    <div class="testimonial-author">James Rodriguez</div>
+                    <div class="testimonial-role">Homeowner</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta">
+        <div class="container">
+            <h2>Ready to Start Saving?</h2>
+            <p>
+                Get a free consultation and discover how much you can save with solar energy. 
+                Our experts will design a custom solution for your home or business.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-white">Get Free Quote →</a>
+                <a href="tel:555-123-4567" class="btn btn-outline">Call Us Now</a>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    📞 +639674813331
+                </div>
+                <div class="contact-item">
+                    ✉️ bzgsolar@gmail.com
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Empowering Filipino homes with clean and affordable solar energy — one roof at a time.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Who We Are</h3>
+                    <p>
+                        We are a team of certified solar energy professionals dedicated to making solar power
+                        accessible and sustainable for every Filipino homeowner. Our mission is to reduce
+                        electricity costs while promoting a greener future through innovative and reliable solar solutions.
+                    </p>
+                    <h3>Our Vision</h3>
+                    <p>
+                        To become the most trusted solar installation company in the Philippines by delivering
+                        top-quality solar systems and exceptional customer service.
+                    </p>
+                    <a href="#cta" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="solarteam.jpg" alt="Our Solar Team">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQs Section -->
+    <section class="faqs" id="faqs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Got questions about solar energy? We’ve got you covered.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How long does a solar installation take?</h3>
+                    <p>For small residential homes, installation usually takes 1–3 days depending on the system size.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What warranty do you provide?</h3>
+                    <p>We offer 5 years performance warranty on panels, 2 years inverter warranty, and 1 years workmanship warranty.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do solar panels work during cloudy days?</h3>
+                    <p>Yes, solar panels still produce power even on cloudy days though slightly reduced compared to sunny days.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I lower my electric bill to zero?</h3>
+                    <p>With a properly sized solar system, you can offset up to 100% of your power consumption depending on your energy use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo">☀️ BZGSolar</div>
+                    <p style="color: var(--color-muted); font-size: 0.875rem; margin-top: 1rem;">
+                        Powering homes and businesses with clean, renewable solar energy.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Residential Solar</a></li>
+                        <!-- <li><a href="#">Commercial Solar</a></li> -->
+                        <li><a href="#">Maintenance</a></li>
+                        <!-- <li><a href="#">Consultation</a></li> -->
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <!-- <li><a href="#">Our Team</a></li> -->
+                        <!-- <li><a href="#">Careers</a></li> -->
+                        <li><a href="#cta">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <!-- <li><a href="#">Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Warranties</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BRZSolar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.card, .service-card, .testimonial-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
